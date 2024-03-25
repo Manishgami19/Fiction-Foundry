@@ -1,0 +1,7 @@
+.text-fullname {
+    display: none;
+}
+
+.dot-firstname:hover + .text-fullname {
+    display: block;
+}

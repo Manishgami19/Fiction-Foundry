@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Nextale: Author Index</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}">
+</head>
+<body>
+    <div th:insert="~{commons/header :: header}"></div>
+    <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto md:w-2/3 w-full flex">
+                <div class="mx-auto">
+                    <div th:insert="~{authors/_author_component :: author_component}" />
+                <div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+  

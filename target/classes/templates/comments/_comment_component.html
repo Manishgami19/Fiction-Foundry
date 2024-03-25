@@ -1,0 +1,20 @@
+<div th:fragment="comment_component">
+    <div id="${comment.id}">
+        <p class="my-5">
+            <strong class="block font-medium mb-1">Pseudonyme:</strong>
+            <span th:text="${comment.pseudonyme}" />
+        </p>
+
+        <p class="my-5">
+            <strong class="block font-medium mb-1">Content:</strong>
+            <span th:text="${comment.content}" />
+        </p>
+
+        <p class="my-5">
+            <strong class="block font-medium mb-1">Rating:</strong>
+            <span th:text="${comment.rating}" />
+        </p>
+      
+        <hr class="mt-6">
+    </div>
+</div>

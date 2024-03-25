@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Nextale: Book Detail</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div th:insert="~{commons/header :: header}"></div>
+    <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto md:w-2/3 w-full flex">
+                <div class="mx-auto">
+                    <div th:insert="~{books/_book_component :: book_component}"></div>
+                </div>
+
+                <div id="comments" class="mx-auto">
+
+                    <h2 class="font-bold text-2xl">Enter your comment here...</h2>
+                    <form id="submitComment-form" class="form mt-4"
+                          th:action="@{@{'/book/' + ${book.id} + '/comment'}}" method="post" th:object="${comment}">
+                        <div class="form-group">
+                            <div class="input-group form-group">
+                                <label for="Pseudonyme-success" class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Pseudonyme</label>
+                                <input type="text" name="pseudonyme" id="Pseudonyme-success" class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-green-100 dark:border-green-400"
+                                       th:value="${comment.pseudonyme}" placeholder=" Your Pseudonyme">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group form-group">
+
+                                <label for="Content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Content</label>
+                                <textarea id="Content" name="content" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                          th:value="${comment.content}" placeholder="Leave a comment..." style="height: 107px;"></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group form-group">
+                                <label for="rating-success" class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Rating</label>
+                                <input type="text" name="rating" id="rating-success" class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-green-100 dark:border-green-400"
+                                       th:value="${comment.rating}" placeholder=" Your rating from 0 to 5">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4 text-center">
+                            <input type="submit" value="Submit" class="font-bold px-4 py-2 text-white" style="background-color: darkred;margin-bottom: 30px;height: 40px;border-radius: 15px;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

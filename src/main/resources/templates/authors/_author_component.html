@@ -1,0 +1,13 @@
+<div th:fragment="author_component">
+    <div th:id="@{author.id}">
+        <p class="my-5">
+        <strong class="block font-medium mb-1">First name:</strong>
+        <span th:text="${author.firstName}" />
+        </p>
+    
+        <p class="my-5">
+        <strong class="block font-medium mb-1">Last name:</strong>
+        <span th:text="${author.lastName}" />
+        </p>
+    </div>
+</div>

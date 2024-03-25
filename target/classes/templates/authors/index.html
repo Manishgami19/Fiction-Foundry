@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Nextale: Author Index</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.build.tailwind.css}">
+</head>
+<body>
+    <div th:insert="~{commons/header :: header}"></div>
+    <header class="bg-white shadow">
+        <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Authors</h1>
+        </div>
+    </header>
+    <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <div id="authors" class="min-w-full">
+                <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                    <div th:each="author: ${authors}">
+                        <div th:insert="~{authors/_author_component :: author_component}"></div>
+                        <a href="#" th:href="@{'/author/' + ${author.id}}">See author details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Pagination">
+            <ul class="flex justify-center list-style-none text-gray-700 h-8"
+                style="background-color: black;color: white;font-weight: 500;text-indent: 20px;margin-bottom: 10px;">
+                <li class="page-item"><a
+                        class="page-link"><strong><i>Pagination : </i></strong></a>
+                </li>
+                <div th:if="${authors.totalPages > 0}" class="pagination"
+                     th:each="pageNumber : ${pageNumbers}">
+                    <a th:href="@{/author(size=${authors.size}, page=${pageNumber})}"
+                       th:text=${pageNumber}
+                       th:class="${pageNumber==authors.number + 1} ? active"></a>
+                </div>
+            </ul>
+            <ul class="h-8 justify-center text-gray-700">
+                <li style="width: 100%;text-align: center;">
+                    <label class="font-bold mb-2 text-gray-700 text-xs tracking-wide uppercase" for="grid-state">
+                        <i>Items per page<i>
+                    </label>
+                    <select class="appearance-none bg-gray-200 border border-gray-200 leading-tight pr-8 px-4 py-3 rounded text-gray-700" id="grid-state"
+                            style="width: 15%;">
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                        <option>ALL</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

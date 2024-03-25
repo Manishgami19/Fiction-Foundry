@@ -1,0 +1,25 @@
+{
+  "name": "techtest.nextale",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "NODE_ENV=production tailwindcss -i src/main/resources/static/css/style.tailwind.css -o target/classes/static/css/style.build.tailwind.css",
+    "watch:postcss": "NODE_ENV=development tailwindcss -i src/main/resources/static/css/style.tailwind.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.15",
+    "gulp-postcss": "^9.0.1",
+    "postcss": "^8.4.28",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.3"
+  }
+}

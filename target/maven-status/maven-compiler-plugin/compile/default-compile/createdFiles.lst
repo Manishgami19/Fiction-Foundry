@@ -1,0 +1,16 @@
+com\nextory\techtest\services\AuthorService.class
+com\nextory\techtest\services\BookService.class
+com\nextory\techtest\views\PostCommentController.class
+com\nextory\techtest\views\AuthorViewController.class
+com\nextory\techtest\repositories\CommentRepository.class
+com\nextory\techtest\services\CommentService.class
+com\nextory\techtest\NexTaleApplication.class
+com\nextory\techtest\models\Book.class
+com\nextory\techtest\controllers\AuthorController.class
+com\nextory\techtest\models\Author.class
+com\nextory\techtest\controllers\BookController.class
+com\nextory\techtest\views\IndexViewController.class
+com\nextory\techtest\repositories\AuthorRepository.class
+com\nextory\techtest\models\Comment.class
+com\nextory\techtest\views\BookViewController.class
+com\nextory\techtest\repositories\BookRepository.class
